@@ -12,11 +12,10 @@ var dataMg ;
 server.use('/qujie/get/require',function(require,response,next){
     console.log('执行第一块代码，查询数据');
 
-    dataMg = '这里查询结果，发送给客户端' ;
+    dataMg = 'get 这里查询结果，发送给客户端' ;
 
     next();
 });
-
 // 2.发送数据代码块
 server.get('/qujie/get/require',function(require,response){
 
@@ -25,6 +24,21 @@ server.get('/qujie/get/require',function(require,response){
     response.send(dataMg);
 });
 
+
+// POST 请求
+server.use('/qujie/post/require',function(require,response,next){
+    console.log('执行第一块代码，查询数据');
+
+    dataMg = 'post 这里查询结果，发送给客户端' ;
+
+    next();
+});
+server.post('/qujie/post/require',function(require,response){
+    
+        console.log('发送数据');
+    
+        response.send(dataMg);
+    });
 
 // 监听
 server.listen('8080');
