@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 // 3.1解析 www 格式( application/x-www-form-urlencoded ) POST 参数解析器, 是一个 function
 var urlencodedParser = bodyParser.urlencoded({extended:true});
 
-// 3.2解析 json 格式 POST 参数解析器 , 是一个 function
+// 3.2解析 json 格式( application/json ) POST 参数解析器 , 是一个 function
 var jsonParser = bodyParser.json();
 
 
@@ -32,7 +32,7 @@ server.post('/qujie/post/www/require',function(require,response){
 
     console.log(require.body);
 
-    response.send('qujie www POST 请求后返回的值');
+    response.send({'other':'qujie www POST 请求后返回的值' , 'body':require.body});
 });
 
 // 6.2 '/qujie/post/json/require' 的 POST 请求
@@ -40,7 +40,7 @@ server.post('/qujie/post/json/require',function(require,response){
     
         console.log(require.body);
     
-        response.send('qujie json POST 请求后返回的值');
+        response.send({'other':'qujie json POST 请求后返回的值' , 'body':require.body});
 });
 
 
