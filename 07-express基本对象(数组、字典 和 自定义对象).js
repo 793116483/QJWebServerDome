@@ -23,8 +23,7 @@ dictionaryDome();
 
 
 
-// 数组 []
-
+// 数组 [] 
 function arrayDome(){
 
     // 1.数组的下标都是从 0 开始的
@@ -56,11 +55,10 @@ function arrayDome(){
 
     console.log(array);
 
-
     // underscore: js 操作
     var underscore = require('underscore');
     
-    // 判断是否包含指定的值
+    // 判断是否包含指定的值 , 根据地址判断
     // array : 数组
     // 'qujie': 指定的值
     // 2     : 指定从数组下标为 2 开始向后判断是否包含元素
@@ -69,7 +67,6 @@ function arrayDome(){
 };
 
 arrayDome();
-
 
 
 
